@@ -53,7 +53,8 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "5PMrCeU3oKkGZuRi6ET9Vk",
@@ -85,6 +86,19 @@
             "modulePath": "../pages/policies.tsx"
           },
           "cssFilePath": "plasmic/devyn_green_com/PlasmicPolicies.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "sXQzK83Pt-G",
+          "name": "Demo",
+          "type": "managed",
+          "projectId": "5PMrCeU3oKkGZuRi6ET9Vk",
+          "renderModuleFilePath": "plasmic/devyn_green_com/PlasmicDemo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/demo.tsx"
+          },
+          "cssFilePath": "plasmic/devyn_green_com/PlasmicDemo.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
