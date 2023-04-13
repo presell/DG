@@ -148,6 +148,26 @@
 .intro > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 16px;
 }
+.intro {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  min-width: 0;
+  padding: 0em;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .intro {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .intro {
     margin-left: 0px;

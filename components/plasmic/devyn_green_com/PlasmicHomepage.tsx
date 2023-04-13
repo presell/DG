@@ -129,6 +129,7 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.root_reset,
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
@@ -160,7 +161,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   ) : null}
-
                   <p.PlasmicImg
                     alt={""}
                     className={classNames(sty.img__xMmrr)}
@@ -179,7 +179,6 @@ function PlasmicHomepage__RenderFunc(props: {
                     }}
                   />
                 </div>
-
                 {(
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? true
@@ -201,7 +200,6 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-
           <p.Stack
             as={"section"}
             data-plasmic-name={"intro"}
@@ -236,7 +234,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
-
               <div
                 className={classNames(
                   projectcss.all,
@@ -277,7 +274,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
-
               <div className={classNames(projectcss.all, sty.freeBox__l9AnT)}>
                 <div className={classNames(projectcss.all, sty.columns__wGJoh)}>
                   <div
@@ -301,7 +297,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       }}
                     />
                   </div>
-
                   <div
                     className={classNames(projectcss.all, sty.column__fxqdv)}
                   >
@@ -350,7 +345,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </div>
             </div>
-
             <div className={classNames(projectcss.all, sty.freeBox__dhkx)}>
               {true ? (
                 <Video
@@ -373,7 +367,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 />
               ) : null}
-
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__ohqCy)}
