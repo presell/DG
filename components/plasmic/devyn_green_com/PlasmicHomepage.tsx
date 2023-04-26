@@ -62,7 +62,6 @@ export type PlasmicHomepage__OverridesType = {
   h1?: p.Flex<"h1">;
   h2?: p.Flex<"h2">;
   htmlVideo?: p.Flex<typeof Video>;
-  embedHtml?: p.Flex<typeof Embed>;
 };
 
 export interface DefaultHomepageProps {}
@@ -359,9 +358,7 @@ function PlasmicHomepage__RenderFunc(props: {
               ) : null}
               {true ? (
                 <Embed
-                  data-plasmic-name={"embedHtml"}
-                  data-plasmic-override={overrides.embedHtml}
-                  className={classNames("__wab_instance", sty.embedHtml)}
+                  className={classNames("__wab_instance", sty.embedHtml__jivHv)}
                   code={
                     '<script src="https://fast.wistia.com/embed/medias/4uzeim2xph.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4uzeim2xph videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/4uzeim2xph/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>' as const
                   }
@@ -394,6 +391,12 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </p.Stack>
+          <Embed
+            className={classNames("__wab_instance", sty.embedHtml___45Dxy)}
+            code={
+              "<!-- Twitter conversion tracking base code -->\n<script>\n!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);\n},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',\na=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');\ntwq('config','oeqxf');\n</script>\n<!-- End Twitter conversion tracking base code -->\n\n<!-- Meta Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '1293908701337698');\nfbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\nsrc=\"https://www.facebook.com/tr?id=1293908701337698&ev=PageView&noscript=1\"\n/></noscript>\n<!-- End Meta Pixel Code -->" as const
+            }
+          />
         </div>
       </div>
     </React.Fragment>
@@ -401,13 +404,12 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navBar", "intro", "h1", "h2", "htmlVideo", "embedHtml"],
+  root: ["root", "navBar", "intro", "h1", "h2", "htmlVideo"],
   navBar: ["navBar"],
-  intro: ["intro", "h1", "h2", "htmlVideo", "embedHtml"],
+  intro: ["intro", "h1", "h2", "htmlVideo"],
   h1: ["h1"],
   h2: ["h2"],
-  htmlVideo: ["htmlVideo"],
-  embedHtml: ["embedHtml"]
+  htmlVideo: ["htmlVideo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -419,7 +421,6 @@ type NodeDefaultElementType = {
   h1: "h1";
   h2: "h2";
   htmlVideo: typeof Video;
-  embedHtml: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -487,7 +488,6 @@ export const PlasmicHomepage = Object.assign(
     h1: makeNodeComponent("h1"),
     h2: makeNodeComponent("h2"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    embedHtml: makeNodeComponent("embedHtml"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
