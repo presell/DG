@@ -36,25 +36,48 @@
         {
           "id": "CMDBvOhaI4s",
           "name": "Iframe",
+          "displayName": "hostless-iframe",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "RhitNJW5Zu-",
           "name": "Video",
+          "displayName": "hostless-html-video",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "PKldDYkH42",
           "name": "Embed",
+          "displayName": "hostless-embed",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         },
         {
           "id": "D4RbnlpRXg3",
           "name": "DataProvider",
+          "displayName": "hostless-data-provider",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "K-mWGqrHefEp",
+          "name": "SideEffect",
+          "displayName": "hostless-side-effect",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "SpkzmXJqg27p",
+          "name": "Timer",
+          "displayName": "hostless-timer",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "jsBundleThemes": []
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     },
     {
       "projectId": "5PMrCeU3oKkGZuRi6ET9Vk",
@@ -103,7 +126,13 @@
           "componentType": "page"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "hq5hmx3uaCAg",
+          "name": "IgIconsvgIcon",
+          "moduleFilePath": "plasmic/devyn_green_com/icons/PlasmicIcon__IgIconsvg.tsx"
+        }
+      ],
       "images": [
         {
           "id": "HqoZ_2x3V",
@@ -119,6 +148,31 @@
           "id": "2nwhk92_z",
           "name": "coming soon.svg",
           "filePath": "../public/plasmic/devyn_green_com/images/comingSoonsvg.svg"
+        },
+        {
+          "id": "GgZ8aPGVDMcc",
+          "name": "Devyn Green Hero Image.png",
+          "filePath": "../public/plasmic/devyn_green_com/images/devynGreenHeroImagepng.png"
+        },
+        {
+          "id": "3niajNNGINpi",
+          "name": "Devyn Green Hero Image.png 2",
+          "filePath": "../public/plasmic/devyn_green_com/images/devynGreenHeroImagepng2.png"
+        },
+        {
+          "id": "zdgADPt-q0C7",
+          "name": "X Icon.png",
+          "filePath": "../public/plasmic/devyn_green_com/images/xIconpng.png"
+        },
+        {
+          "id": "FEZEvCmNdLUL",
+          "name": "IG Icon.svg 2",
+          "filePath": "../public/plasmic/devyn_green_com/images/igIconsvg2.svg"
+        },
+        {
+          "id": "K43ZqODaCUh7",
+          "name": "LinkedIn Icon.png",
+          "filePath": "../public/plasmic/devyn_green_com/images/linkedInIconpng.png"
         }
       ],
       "indirect": false,
@@ -127,14 +181,18 @@
         {
           "id": "OCvIEHbaYi",
           "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
           "componentImportPath": "@plasmicapp/react-web"
         },
         {
           "id": "hFPIpJFm47",
           "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
-      ]
+      ],
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     }
   ],
   "globalVariants": {
@@ -151,6 +209,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.265",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.265/dist/plasmic.schema.json"
+  "cliVersion": "0.1.327",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.327/dist/plasmic.schema.json"
 }

@@ -17,27 +17,50 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
-import { Video } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: RhitNJW5Zu-/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import { useScreenVariants as useScreenVariantszXvk5LPyXewS } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: zXvk5lPy-xewS/globalVariant
 
@@ -45,6 +68,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_devyn_green_com.module.css"; // plasmic-import: 5PMrCeU3oKkGZuRi6ET9Vk/projectcss
 import sty from "./PlasmicDemo.module.css"; // plasmic-import: sXQzK83Pt-G/css
+
+createPlasmicElementProxy;
 
 export type PlasmicDemo__VariantMembers = {};
 export type PlasmicDemo__VariantsArgs = {};
@@ -56,24 +81,18 @@ type ArgPropType = keyof PlasmicDemo__ArgsType;
 export const PlasmicDemo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDemo__OverridesType = {
-  root?: p.Flex<"div">;
-  navBar?: p.Flex<"div">;
-  intro?: p.Flex<"section">;
-  h1?: p.Flex<"h1">;
-  h2?: p.Flex<"h2">;
-  htmlVideo?: p.Flex<typeof Video>;
-  embedHtml?: p.Flex<typeof Embed>;
+  root?: Flex__<"div">;
+  navBar?: Flex__<"div">;
+  intro?: Flex__<"section">;
+  h1?: Flex__<"h1">;
+  h2?: Flex__<"h2">;
+  htmlVideo?: Flex__<typeof Video>;
+  embedHtml?: Flex__<typeof Embed>;
 };
 
 export interface DefaultDemoProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -89,20 +108,20 @@ function PlasmicDemo__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
+  const currentUser = useCurrentUser?.() || {};
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantszXvk5LPyXewS()
@@ -133,74 +152,53 @@ function PlasmicDemo__RenderFunc(props: {
             sty.root
           )}
         >
-          {true ? (
-            <div
-              data-plasmic-name={"navBar"}
-              data-plasmic-override={overrides.navBar}
-              className={classNames(projectcss.all, sty.navBar)}
-            >
-              <div className={classNames(projectcss.all, sty.columns___7InuF)}>
-                <div className={classNames(projectcss.all, sty.column__ridFe)}>
-                  {true ? (
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___9Glm4
-                      )}
+          <div
+            data-plasmic-name={"navBar"}
+            data-plasmic-override={overrides.navBar}
+            className={classNames(projectcss.all, sty.navBar)}
+          >
+            <div className={classNames(projectcss.all, sty.columns___7InuF)}>
+              <div className={classNames(projectcss.all, sty.column__ridFe)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Glm4
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
                     >
-                      <React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ fontWeight: 700 }}
-                        >
-                          {"Devyn Green"}
-                        </span>
-                      </React.Fragment>
-                    </div>
-                  ) : null}
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img___5TyXi)}
-                    displayHeight={"auto" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"auto" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/devyn_green_com/images/cbd3733DDgSignatureBllack1000000000000000000028Png.png",
-                      fullWidth: 316,
-                      fullHeight: 67,
-                      aspectRatio: undefined
-                    }}
-                  />
+                      {"Devyn Green"}
+                    </span>
+                  </React.Fragment>
                 </div>
-                {(
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : true
-                ) ? (
-                  <div
-                    className={classNames(projectcss.all, sty.column__xhHkj)}
-                  />
-                ) : null}
-                {(
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : true
-                ) ? (
-                  <div
-                    className={classNames(projectcss.all, sty.column___6JKod)}
-                  />
-                ) : null}
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img___5TyXi)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/devyn_green_com/images/cbd3733DDgSignatureBllack1000000000000000000028Png.png",
+                    fullWidth: 316,
+                    fullHeight: 67,
+                    aspectRatio: undefined
+                  }}
+                />
               </div>
+              <div className={classNames(projectcss.all, sty.column__xhHkj)} />
+
+              <div className={classNames(projectcss.all, sty.column___6JKod)} />
             </div>
-          ) : null}
-          <p.Stack
+          </div>
+          <Stack__
             as={"section"}
             data-plasmic-name={"intro"}
             data-plasmic-override={overrides.intro}
@@ -279,16 +277,16 @@ function PlasmicDemo__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.column__pQrW1)}
                   >
-                    <p.PlasmicImg
+                    <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__xh8Kn)}
-                      displayHeight={"auto" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"auto" as const}
-                      loading={"lazy" as const}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
                       src={{
                         src: "/plasmic/devyn_green_com/images/upworkProfilepng.png",
                         fullWidth: 1000,
@@ -346,45 +344,43 @@ function PlasmicDemo__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__xb8Zk)}>
-              {true ? (
-                <Video
-                  data-plasmic-name={"htmlVideo"}
-                  data-plasmic-override={overrides.htmlVideo}
-                  className={classNames("__wab_instance", sty.htmlVideo)}
-                  controls={true}
-                  src={
-                    "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" as const
-                  }
-                />
-              ) : null}
-              {true ? (
-                <Embed
-                  data-plasmic-name={"embedHtml"}
-                  data-plasmic-override={overrides.embedHtml}
-                  className={classNames("__wab_instance", sty.embedHtml)}
-                  code={
-                    '<script src="https://fast.wistia.com/embed/medias/4uzeim2xph.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4uzeim2xph videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/4uzeim2xph/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>' as const
-                  }
-                />
-              ) : null}
-              <p.PlasmicImg
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={true}
+                src={
+                  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+                }
+              />
+
+              <Embed
+                data-plasmic-name={"embedHtml"}
+                data-plasmic-override={overrides.embedHtml}
+                className={classNames("__wab_instance", sty.embedHtml)}
+                code={
+                  '<script src="https://fast.wistia.com/embed/medias/4uzeim2xph.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4uzeim2xph videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/4uzeim2xph/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>'
+                }
+              />
+
+              <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__m0UEu)}
                 displayHeight={
                   hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? ("100%" as const)
-                    : ("441px" as const)
+                    ? "100%"
+                    : "441px"
                 }
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
                 displayWidth={
                   hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? ("auto" as const)
-                    : ("784px" as const)
+                    ? "auto"
+                    : "784px"
                 }
-                loading={"lazy" as const}
+                loading={"lazy"}
                 src={{
                   src: "/plasmic/devyn_green_com/images/comingSoonsvg.svg",
                   fullWidth: 267,
@@ -393,7 +389,7 @@ function PlasmicDemo__RenderFunc(props: {
                 }}
               />
             </div>
-          </p.Stack>
+          </Stack__>
         </div>
       </div>
     </React.Fragment>
@@ -456,7 +452,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicDemo__ArgProps,
           internalVariantPropNames: PlasmicDemo__VariantProps
         }),
